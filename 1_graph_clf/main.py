@@ -48,8 +48,9 @@ for G in x:
 
 	f1 = nx.eigenvector_centrality(G)["virtual"]
 	f2 = nx.pagerank(G)["virtual"]
+	f3 = nx.betweenness_centrality(G)["virtual"]
 
-	embs.append(np.array([f1, f2]))
+	embs.append(np.array([f1, f2, f3]))
 
 model = PCA(2)
 pts = model.fit_transform(embs)
